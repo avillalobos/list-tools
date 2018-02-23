@@ -1,0 +1,78 @@
+//
+// named.conf
+//
+// Provided by Red Hat bind package to configure the ISC BIND named(8) DNS
+// server as a caching only nameserver (as a localhost DNS resolver only).
+//
+// See /usr/share/doc/bind*/sample/ for example named configuration files.
+//
+// See the BIND Administrator's Reference Manual (ARM) for details about the
+// configuration located in /usr/share/doc/bind-{version}/Bv9ARM.html
+
+# Master and slave servers are only queried by its repectively caching server and subdomains and upper domains
+acl cache_ls_cl_lsst_org{
+	172.24.4.252;
+	172.24.4.253;
+};
+
+acl cl_lsst_org{
+	172.24.2.250;
+	172.24.2.251;
+};
+
+options {
+	listen-on port 53 {
+		127.0.0.1;
+		172.24.0.0/16;
+	};
+	listen-on-v6 port 53 { ::1; };
+	directory 	"/var/named";
+	dump-file 	"/var/named/data/cache_dump.db";
+	statistics-file "/var/named/data/named_stats.txt";
+	memstatistics-file "/var/named/data/named_mem_stats.txt";
+	allow-query     {
+		localhost;
+		cache_ls_cl_lsst_org;
+		cl_lsst_org;
+	};
+
+	recursion yes;
+
+	forwarders{
+		172.24.2.250;
+		172.24.2.251;
+	};
+
+	forward only;
+
+	#TODO Enable this after development phase
+	dnssec-enable no;
+	dnssec-validation no;
+
+	/* Path to ISC DLV key */
+	bindkeys-file "/etc/named.iscdlv.key";
+
+	managed-keys-directory "/var/named/dynamic";
+
+	pid-file "/run/named/named.pid";
+	session-keyfile "/run/named/session.key";
+};
+
+logging {
+        channel default_debug {
+                file "data/named.run";
+                severity dynamic;
+        };
+};
+
+zone "ls_cl_lsst_org" IN {
+	type slave;
+	file "cl.lsst.org.zone";
+	masters {
+		172.24.4.250;
+	};
+};
+
+include "/etc/named.rfc1912.zones";
+include "/etc/named.root.key";
+

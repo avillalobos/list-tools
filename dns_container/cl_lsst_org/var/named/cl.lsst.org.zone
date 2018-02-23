@@ -1,0 +1,51 @@
+$ORIGIN cl.lsst.org.
+$TTL 86400
+@			IN  SOA  dns-master.cl.lsst.org.  mail (
+			2001062501  ; serial
+			21600       ; refresh after 6 hours
+			3600        ; retry after 1 hour
+			604800      ; expire after 1 week
+			86400 )     ; minimum TTL of 1 day
+;
+;
+			IN	NS	dns-master.cl.lsst.org.
+			IN	NS	dns-slave.cl.lsst.org.
+dns-master		IN	A	172.24.2.250
+			IN	AAAA	aaaa:bbbb::1
+dns-slave		IN	A	172.24.2.251
+;
+;
+@			IN	MX	10	mail.cl.lsst.org.
+			IN	MX	20	atlantis.cl.lsst.org.
+			IN	MX	30	endeavour.cl.lsst.org.
+mail			IN	A	172.24.2.100
+atlantis		IN	A	172.24.2.101
+endeavour		IN	A	172.24.2.102
+;
+;
+; This sample zone file illustrates sharing the same IP addresses
+; for multiple services:
+;
+services  	IN	A	172.24.2.10
+		IN	AAAA	aaaa:bbbb::10
+		IN	A	172.24.2.11
+		IN	AAAA	aaaa:bbbb::11
+dns-test	IN	A	172.24.2.200
+archive		IN	A	172.24.2.20
+efd		IN	A	172.24.2.21
+tcs		IN	A	172.24.2.22
+
+ftp		IN	CNAME	services.cl.lsst.org.
+www		IN	CNAME	services.cl.lsst.org.
+;
+;
+
+; sub-domain definitions
+$ORIGIN ls.cl.lsst.org.
+@		IN	NS	dns-master.ls.cl.lsst.org.
+		IN	NS	dns-slave.ls.cl.lsst.org.
+		IN	NS	dns-master.cl.lsst.org.
+		IN	NS	dns-slave.cl.lsst.org.
+; part of the subdomain - dns-master.cl.lsst.org
+dns-master	IN	A	172.24.4.250
+dns-slave	IN	A	172.24.4.251

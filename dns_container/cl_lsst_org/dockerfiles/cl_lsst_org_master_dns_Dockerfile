@@ -1,0 +1,15 @@
+FROM lsst_base_image
+
+MAINTAINER Andres Villalobos
+
+RUN yum -y install bind bind-utils
+RUN systemctl enable named
+COPY etc/named.conf.master /etc/named.conf
+COPY etc/systemd/system/named.service.d/named.conf /etc/systemd/system/named.service.d/named.conf  
+COPY var/named /var/
+RUN chown -R named:named /var/named/data /var/named/dynamic /var/named/slaves 
+RUN chown -R root:named /var/named/named.ca /var/named/named.empty /var/named/named.localhost /var/named.localhost /var/named.loopback
+RUN chmod 750 /var/named && chmod 770 /var/named/data /var/named/dynamic /var/named/slaves 
+RUN chown root:named /etc/named.conf && chmod 740 /etc/named.conf
+
+CMD /sbin/init 

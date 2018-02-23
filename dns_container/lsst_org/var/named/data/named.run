@@ -1,0 +1,121 @@
+managed-keys-zone: loaded serial 0
+zone 0.in-addr.arpa/IN: loaded serial 0
+zone 1.0.0.127.in-addr.arpa/IN: loaded serial 0
+zone localhost/IN: loaded serial 0
+zone 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.ip6.arpa/IN: loaded serial 0
+zone localhost.localdomain/IN: loaded serial 0
+all zones loaded
+running
+error (network unreachable) resolving 'lsst.org/A/IN': 2001:500:c::1#53
+error (network unreachable) resolving 'ns-635.awsdns-15.net/A/IN': 2001:503:eea3::30#53
+error (network unreachable) resolving 'ns-635.awsdns-15.net/AAAA/IN': 2001:503:eea3::30#53
+error (network unreachable) resolving 'ns-635.awsdns-15.net/A/IN': 2001:500:856e::30#53
+error (network unreachable) resolving 'ns-635.awsdns-15.net/AAAA/IN': 2001:500:856e::30#53
+error (network unreachable) resolving 'ns-635.awsdns-15.net/A/IN': 2001:502:1ca1::30#53
+error (network unreachable) resolving 'ns-635.awsdns-15.net/AAAA/IN': 2001:502:1ca1::30#53
+error (network unreachable) resolving 'ns-635.awsdns-15.net/A/IN': 2001:503:a83e::2:30#53
+error (network unreachable) resolving 'ns-635.awsdns-15.net/AAAA/IN': 2001:503:a83e::2:30#53
+error (network unreachable) resolving 'org/DNSKEY/IN': 2001:500:40::1#53
+received control channel command 'stop'
+shutting down: flushing changes
+stopping command channel on 127.0.0.1#953
+stopping command channel on ::1#953
+no longer listening on 127.0.0.1#53
+no longer listening on ::1#53
+exiting
+managed-keys-zone: journal file is out of date: removing journal file
+managed-keys-zone: loaded serial 2
+zone 0.in-addr.arpa/IN: loaded serial 0
+zone localhost/IN: loaded serial 0
+zone 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.ip6.arpa/IN: loaded serial 0
+zone 1.0.0.127.in-addr.arpa/IN: loaded serial 0
+zone localhost.localdomain/IN: loaded serial 0
+zone lsst.org/IN: lsst.org/MX 'atlantis.lsst.org.lsst.org' has no address records (A or AAAA)
+zone lsst.org/IN: lsst.org/MX 'endeavour.lsst.org.lsst.org' has no address records (A or AAAA)
+zone lsst.org/IN: loaded serial 2001062501
+all zones loaded
+running
+zone lsst.org/IN: sending notifies (serial 2001062501)
+received control channel command 'stop'
+shutting down: flushing changes
+stopping command channel on 127.0.0.1#953
+stopping command channel on ::1#953
+no longer listening on 127.0.0.1#53
+no longer listening on ::1#53
+exiting
+managed-keys-zone: loaded serial 2
+zone 0.in-addr.arpa/IN: loaded serial 0
+zone 1.0.0.127.in-addr.arpa/IN: loaded serial 0
+zone 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.ip6.arpa/IN: loaded serial 0
+zone localhost.localdomain/IN: loaded serial 0
+zone lsst.org/IN: lsst.org/MX 'atlantis.lsst.org.lsst.org' has no address records (A or AAAA)
+zone lsst.org/IN: lsst.org/MX 'endeavour.lsst.org.lsst.org' has no address records (A or AAAA)
+zone lsst.org/IN: loaded serial 2001062501
+zone localhost/IN: loaded serial 0
+all zones loaded
+running
+zone lsst.org/IN: sending notifies (serial 2001062501)
+client ::1#57493 (mail): query (cache) 'mail/A/IN' denied
+client ::1#52722 (mail.lsst.or): query (cache) 'mail.lsst.or/A/IN' denied
+received control channel command 'stop'
+shutting down: flushing changes
+stopping command channel on 127.0.0.1#953
+stopping command channel on ::1#953
+no longer listening on 127.0.0.1#53
+no longer listening on ::1#53
+exiting
+managed-keys-zone: loaded serial 2
+zone 0.in-addr.arpa/IN: loaded serial 0
+zone 1.0.0.127.in-addr.arpa/IN: loaded serial 0
+zone 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.ip6.arpa/IN: loaded serial 0
+zone localhost/IN: loaded serial 0
+zone lsst.org/IN: lsst.org/MX 'atlantis.lsst.org.lsst.org' has no address records (A or AAAA)
+zone lsst.org/IN: lsst.org/MX 'endeavour.lsst.org.lsst.org' has no address records (A or AAAA)
+zone lsst.org/IN: loaded serial 2001062501
+zone localhost.localdomain/IN: loaded serial 0
+all zones loaded
+running
+zone lsst.org/IN: sending notifies (serial 2001062501)
+client ::1#60822 (mail): query (cache) 'mail/A/IN' denied
+client ::1#37490 (mail): query (cache) 'mail/A/IN' denied
+received control channel command 'stop'
+shutting down: flushing changes
+stopping command channel on 127.0.0.1#953
+stopping command channel on ::1#953
+no longer listening on 127.0.0.1#53
+no longer listening on ::1#53
+exiting
+managed-keys-zone: loaded serial 2
+zone 0.in-addr.arpa/IN: loaded serial 0
+zone 1.0.0.127.in-addr.arpa/IN: loaded serial 0
+zone 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.ip6.arpa/IN: loaded serial 0
+zone lsst.org/IN: lsst.org/MX 'atlantis.lsst.org.lsst.org' has no address records (A or AAAA)
+zone lsst.org/IN: lsst.org/MX 'endeavour.lsst.org.lsst.org' has no address records (A or AAAA)
+zone lsst.org/IN: loaded serial 2001062501
+zone localhost.localdomain/IN: loaded serial 0
+zone localhost/IN: loaded serial 0
+all zones loaded
+running
+zone lsst.org/IN: sending notifies (serial 2001062501)
+client ::1#43978 (services): query (cache) 'services/A/IN' denied
+client ::1#58221 (ftp): query (cache) 'ftp/A/IN' denied
+client ::1#55088 (ftp): query (cache) 'ftp/A/IN' denied
+received control channel command 'stop'
+shutting down: flushing changes
+stopping command channel on 127.0.0.1#953
+stopping command channel on ::1#953
+no longer listening on 127.0.0.1#53
+no longer listening on ::1#53
+exiting
+managed-keys-zone: loaded serial 2
+zone 0.in-addr.arpa/IN: loaded serial 0
+zone 1.0.0.127.in-addr.arpa/IN: loaded serial 0
+zone 1.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.0.ip6.arpa/IN: loaded serial 0
+zone localhost.localdomain/IN: loaded serial 0
+zone localhost/IN: loaded serial 0
+zone lsst.org/IN: lsst.org/MX 'atlantis.lsst.org.lsst.org' has no address records (A or AAAA)
+zone lsst.org/IN: lsst.org/MX 'endeavour.lsst.org.lsst.org' has no address records (A or AAAA)
+zone lsst.org/IN: loaded serial 2001062501
+all zones loaded
+running
+zone lsst.org/IN: sending notifies (serial 2001062501)
