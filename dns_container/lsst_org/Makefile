@@ -20,8 +20,6 @@ run: run_master run_slave run_cache
 
 all: all_master all_slave all_cache
 
-
-
 todo:
 	@grep -E --color -Rn "\s*#\s*TODO" ./
 
@@ -44,7 +42,7 @@ delete_master:
 
 
 build_master:
-	docker build -t ${IMAGE_BASENAME}_${MASTER_SUFFIX} -f dockerfiles/${IMAGE_BASENAME}_${MASTER_SUFFIX}_Dockerfile .	
+	docker build -t ${IMAGE_BASENAME}_${MASTER_SUFFIX} -f dockerfiles/${IMAGE_BASENAME}_${MASTER_SUFFIX}_Dockerfile .
 
 #TODO Modify the IP to match the production IP and expose the right ports
 #TODO Add named.conf as volume for debugging
@@ -84,7 +82,7 @@ delete_slave:
 
 
 build_slave:
-	docker build -t ${IMAGE_BASENAME}_${SLAVE_SUFFIX} -f dockerfiles/${IMAGE_BASENAME}_${SLAVE_SUFFIX}_Dockerfile .	
+	docker build -t ${IMAGE_BASENAME}_${SLAVE_SUFFIX} -f dockerfiles/${IMAGE_BASENAME}_${SLAVE_SUFFIX}_Dockerfile .
 	@echo build slave: soon...
 
 #TODO Modify the IP to match the production IP and expose the right ports
@@ -123,7 +121,7 @@ delete_cache:
 
 
 build_cache:
-	docker build -t ${IMAGE_BASENAME}_${CACHE_SUFFIX} -f dockerfiles/${IMAGE_BASENAME}_${CACHE_SUFFIX}_Dockerfile .	
+	docker build -t ${IMAGE_BASENAME}_${CACHE_SUFFIX} -f dockerfiles/${IMAGE_BASENAME}_${CACHE_SUFFIX}_Dockerfile .
 	@echo build slave: soon...
 
 #TODO Modify the IP to match the production IP and expose the right ports
@@ -148,4 +146,3 @@ exec_cache:
 	docker exec -it ${CONTAINER_BASENAME}_${SLAVE_SUFFIX} /bin/bash
 
 all_cache: clean_cache delete_cache build_cache run_cache
-
