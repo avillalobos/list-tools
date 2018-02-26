@@ -1,0 +1,51 @@
+CPUS="1"
+MEMORY="1024"
+VAGRANT_HOSTNAME="dev-farm-node"
+
+$script = <<SCRIPT
+#!/bin/bash
+# support RPM for puppetserver installation
+rpm -Uvh https://yum.puppetlabs.com/puppet5/puppet5-release-el-7.noarch.rpm
+
+# puppet installation plus some otherr utilities
+yum install -y puppetserver git
+
+sed -i 's#\-Xms2g#\-Xms512m#g;s#\-Xmx2g#\-Xmx512m#g' /etc/sysconfig/puppetserver
+
+systemctl start puppetserver
+systemctl enable puppetserver
+
+echo -e "\n[agent]\nserver = $1.puppet.vm" >> /etc/puppetlabs/puppet/puppet.conf
+
+sed -i 's#PATH=.*#PATH=$PATH:/opt/puppetlabs/puppet/bin:$HOME/bin#g' ~/.bash_profile
+
+/opt/puppetlabs/puppet/bin/gem install r10k
+
+mkdir /etc/puppetlabs/r10k/
+
+echo -e "---
+:cachedir: '/var/cache/r10k'
+
+:sources:
+        :my-org:
+                remote: 'https://github.com/avillalobos/lsst_devops.git'
+                basedir: '/etc/puppetlabs/code/environments'" > /etc/puppetlabs/r10k/r10k.yaml
+
+SCRIPT
+
+Vagrant.configure("2") do |config|
+
+  config.vm.box = "centos/7"
+  config.vm.hostname = VAGRANT_HOSTNAME + ".puppet.vm"
+  config.vm.provision "shell" do |s|
+    s.inline = $script
+    s.args = VAGRANT_HOSTNAME
+  end
+  config.vm.network "private_network", type: "dhcp"
+  config.vm.provider "virtualbox" do |v|
+    v.name = VAGRANT_HOSTNAME + ".puppet.vm"
+    v.memory = MEMORY
+    v.cpus = CPUS
+  end
+
+end
