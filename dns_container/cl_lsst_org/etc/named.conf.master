@@ -90,9 +90,9 @@ zone "cl.lsst.org." IN {
 	type master;
 	file "cl.lsst.org.zone";
 	allow-transfer {
+		172.24.1.250;
 		172.24.2.251;
 		172.24.4.250;
-		172.24.4.251;
 	};
 };
 
