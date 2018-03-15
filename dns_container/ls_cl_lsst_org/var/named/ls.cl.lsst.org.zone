@@ -35,7 +35,7 @@ archive			IN	A	172.24.4.20
 efd			IN	A	172.24.4.21
 tcs			IN	A	172.24.4.22
 
-ftp			IN	CNAME	services.cl.lsst.org.
-www			IN	CNAME	services.cl.lsst.org.
+ftp			IN	CNAME	services.ls.cl.lsst.org.
+www			IN	CNAME	services.ls.cl.lsst.org.
 ;
 ;
