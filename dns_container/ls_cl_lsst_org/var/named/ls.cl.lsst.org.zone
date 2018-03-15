@@ -10,25 +10,25 @@ $TTL 86400
 ;
 			IN	NS	dns-master.cl.lsst.org.
 			IN	NS	dns-slave.cl.lsst.org.
-dns-master		IN	A	172.24.2.250
+dns-master		IN	A	172.24.4.250
 			IN	AAAA	aaaa:bbbb::1
-dns-slave		IN	A	172.24.2.251
+dns-slave		IN	A	172.24.4.251
 ;
 ;
 @			IN	MX	10	mail.cl.lsst.org.
 			IN	MX	20	atlantis.cl.lsst.org.
 			IN	MX	30	endeavour.cl.lsst.org.
-mail			IN	A	172.24.2.100
-atlantis		IN	A	172.24.2.101
-endeavour		IN	A	172.24.2.102
+mail			IN	A	172.24.4.100
+atlantis		IN	A	172.24.4.101
+endeavour		IN	A	172.24.4.102
 ;
 ;
 ; This sample zone file illustrates sharing the same IP addresses
 ; for multiple services:
 ;
-services		IN	A	172.24.2.10
+services		IN	A	172.24.4.10
 			IN	AAAA	aaaa:bbbb::10
-			IN	A	172.24.2.11
+			IN	A	172.24.4.11
 			IN	AAAA	aaaa:bbbb::11
 dns-test		IN	A	172.24.4.200
 archive			IN	A	172.24.4.20
