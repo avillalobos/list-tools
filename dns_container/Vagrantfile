@@ -31,9 +31,9 @@ echo -e "---
                 remote: 'https://github.com/avillalobos/lsst_devops.git'
                 basedir: '/etc/puppetlabs/code/environments'" > /etc/puppetlabs/r10k/r10k.yaml
 
-/opt/puppetlabs/puppet/bin/r10k deploy environment it -p
+/opt/puppetlabs/puppet/bin/r10k deploy environment -p
 
-/opt/puppetlabs/puppet/bin/puppet agent -t --environment it
+/opt/puppetlabs/puppet/bin/puppet agent -t
 
 SCRIPT
 
